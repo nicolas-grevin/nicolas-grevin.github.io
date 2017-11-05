@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    font-family: monospace;
+}
+
+p {
+    font-size: 2.5vh;
+}
+
+header img {
+    width: 25vh;
+}
+
+header h1 {
+    margin-top: 4vh;
+    font-size: 5vh;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+section article h1 {
+    display: block;
+    margin-bottom: 2vh;
+    font-size: 4vh;
+}
+
+section article.follow-me aside{
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+section article.follow-me aside a img {
+    width: 7.5vh;
+}
