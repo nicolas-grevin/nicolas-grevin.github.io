@@ -1,0 +1,21 @@
+body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 40vh calc(100vh - 40vh - 3vh) 3vh;
+    grid-template-areas: "h"
+    "c"
+    "f";
+}
+
+header {
+    grid-area: h;
+    align-self: center;
+}
+
+section {
+    grid-area: c;
+}
+
+footer {
+    grid-area: f;
+}
