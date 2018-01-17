@@ -1,47 +1,56 @@
 <template>
-  <div class="follow-me">
-
-  </div>
+  <article class="follow-me">
+    <h1>{{ title }}</h1>
+    <aside v-for="socialNetwork in socialNetworks" :key="socialNetwork.name">
+      <a :href="socialNetwork.link">
+        <img :src="socialNetwork.icon.path" :alt="socialNetwork.icon.alt"/>
+      </a>
+    </aside>
+  </article>
 </template>
 
 <script>
-
+import githubIcon from '../../assets/img/icon/github-logo.svg';
+import dockerIcon from '../../assets/img/icon/docker-logo.svg';
+import twitterIcon from '../../assets/img/icon/twitter-logo.svg';
+import linkedinIcon from '../../assets/img/icon/linkedin-logo.svg';
 
 export default {
   name: 'FollowMe',
   data() {
     return {
+      title: 'Follow Me',
       socialNetworks: [
         {
           name: 'github',
-          link: '',
+          link: 'https://github.com/nicolas-grevin',
           icon: {
-            path: '',
-            alt: '',
+            path: githubIcon,
+            alt: 'icon github logo',
           },
         },
         {
           name: 'docker',
-          link: '',
+          link: 'https://hub.docker.com/u/nicolasgrevin/',
           icon: {
-            path: '',
-            alt: '',
+            path: dockerIcon,
+            alt: 'icon docker logo',
           },
         },
         {
           name: 'twitter',
-          link: '',
+          link: 'https://twitter.com/nicolas_grevin',
           icon: {
-            path: '',
-            alt: '',
+            path: twitterIcon,
+            alt: 'icon twitter logo',
           },
         },
         {
           name: 'linkedin',
-          link: '',
+          link: 'https://www.linkedin.com/in/nicolas-grévin/',
           icon: {
-            path: '',
-            alt: '',
+            path: linkedinIcon,
+            alt: 'icon linkedin logo',
           },
         },
       ],
@@ -50,20 +59,17 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  aside{
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  aside a img {
+    width: 7.5vh;
+  }
 </style>

@@ -17,7 +17,7 @@ exports.cssLoaders = function (options) {
     loader: 'css-loader',
     options: {
       minimize: process.env.NODE_ENV === 'production',
-      sourceMap: options.sourceMap
+      sourceMap: options.sourceMap,
     }
   }
 
@@ -54,16 +54,20 @@ exports.cssLoaders = function (options) {
       {
         loader: 'sass-resources-loader',
         options: {
-          resources: path.resolve(__dirname, '../src/style/_variables.scss')
-        }
+          resources: [
+            path.resolve(__dirname, '../src/styles/_variables.scss'),
+          ],
+        },
       }
     ),
     scss: generateLoaders('sass').concat(
       {
         loader: 'sass-resources-loader',
         options: {
-          resources: path.resolve(__dirname, '../src/style/_variables.scss')
-        }
+          resources: [
+            path.resolve(__dirname, '../src/styles/_variables.scss'),
+          ],
+        },
       }
     ),
     stylus: generateLoaders('stylus'),
