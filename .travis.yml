@@ -23,7 +23,7 @@ jobs:
     - stage: test
       script: yarn test
     - stage: deploy
-      script: echo "Deploying to GitHub releases ..."
+      script: echo "Deploying"
       deploy:
         provider: pages
         skip-cleanup: true
