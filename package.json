@@ -12,7 +12,7 @@
     "test": "yarn run unit",
     "lint-js": "eslint --ext .js,.vue src test/unit",
     "lint-scss": "stylelint '**/*.vue' --syntax scss",
-    "lint": "yarn lint:js && yarn lint:scss"
+    "lint": "yarn lint-js && yarn lint-scss"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.5",

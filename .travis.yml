@@ -1,0 +1,41 @@
+language: node_js
+
+node_js:
+  - "9"
+  - "8"
+  - "7"
+  - "6"
+
+cache:
+  yarn: true
+  directories:
+    - "build"
+    - "node_modules"
+
+jobs:
+  include:
+    - stage: build
+      script: yarn && yarn build
+    - stage: lint
+      script: yarn lint-js
+    - stage: lint
+      script: yarn lint-scss
+    - stage: test
+      script: yarn test
+    - stage: deploy
+      script: echo "Deploying to GitHub releases ..."
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        keep-history: true
+        on:
+          branch: master
+
+
+stages:
+  - build
+  - lint
+  - test
+  - name: deploy
+    if: branch = master
