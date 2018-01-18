@@ -14,7 +14,7 @@ cache:
 
 jobs:
   include:
-    - stage: build
+    - stage: Build
       script: yarn && yarn build
     - stage: lint
       script: yarn lint-js
@@ -23,6 +23,7 @@ jobs:
     - stage: test
       script: yarn test
     - stage: deploy
+      if: branch = master
       script: echo "Deploying"
       deploy:
         provider: pages
@@ -32,10 +33,9 @@ jobs:
         on:
           branch: master
 
-
 stages:
   - build
   - lint
   - test
-  - name: deploy
-    if: branch = master
+  - deploy
+
